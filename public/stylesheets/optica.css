@@ -180,3 +180,13 @@ h1,h2{
     bottom: 10px;
     left: 10px;
 }
+
+#conocenos {
+    background-color: #0C304D;
+    color: white;
+    margin-top: 20px;
+}
+
+#conocenos h2 {
+color: white;
+}
