@@ -13,6 +13,8 @@ var app = express();
 
 require('dotenv').config();
 
+var pool = require('./models/bd');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
