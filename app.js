@@ -8,10 +8,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productosRouter = require('./routes/productos');
 var rb3565Router = require('./routes/rb3565');
+var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades');
 
 var app = express();
 
 require('dotenv').config();
+var session = require('express-session');
 
 var pool = require('./models/bd');
 
@@ -25,10 +28,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+secured = async (req,res,next) => {
+  try { 
+    console.log(req.session.id_usuario);
+  if (req.session.id_usuario) {
+    next ();
+  } else {
+    res.redirect('/admin/login')
+  }
+} catch (error) {
+  console.log(error);
+}
+}
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter);
 app.use('/rb3565', rb3565Router);
+app.use('/admin/login', loginRouter);
+app.use('/admin/novedades', secured, adminRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
