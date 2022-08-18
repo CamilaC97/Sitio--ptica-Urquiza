@@ -1,30 +1,30 @@
 .container-fluid {
     padding-left: 0%;
     padding-right: 0%;
-    
+
 }
 
-#car01 h4{
-font-family: 'Kanit';
-color: #0C304D;
-text-align: left;
-font-size: 30px;
+#car01 h4 {
+    font-family: 'Kanit';
+    color: #0C304D;
+    text-align: left;
+    font-size: 30px;
 }
 
-#car01 p{
+#car01 p {
     font-family: 'Open Sans' cursive;
     color: #0C304D;
     text-align: left;
 }
 
-#car02 h4{
+#car02 h4 {
     font-family: 'Kanit';
     color: white;
     text-align: left;
     font-size: 30px;
 }
 
-#car02 p{
+#car02 p {
     font-family: 'Open Sans';
     color: white;
     text-align: left;
@@ -42,12 +42,13 @@ footer {
 #carousel {
     padding-bottom: 0;
 }
+
 #secciones2 {
     padding-top: 0;
-    
+
 }
 
-#secciones{
+#secciones {
     padding-bottom: 0;
 }
 
@@ -55,7 +56,7 @@ footer {
     background-color: #ddf0ee;
 }
 
-.destacados h2{
+.destacados h2 {
     font-family: 'Kanit';
     color: #0C304D;
     text-align: center;
@@ -67,7 +68,7 @@ footer {
     text-align: center;
 }
 
-.card1 p{
+.card1 p {
     font-family: 'Open Sans';
     color: #12827C;
     font-size: small;
@@ -78,7 +79,7 @@ footer {
     color: #0C304D;
 }
 
-.card2 p{
+.card2 p {
     font-family: 'Open Sans';
     color: #12827C;
     font-size: small;
@@ -89,7 +90,7 @@ footer {
     color: #0C304D;
 }
 
-.card3 p{
+.card3 p {
     font-family: 'Open Sans';
     color: #12827C;
     font-size: small;
@@ -100,7 +101,7 @@ footer {
     color: #0C304D;
 }
 
-.card4 p{
+.card4 p {
     font-family: 'Open Sans';
     color: #12827C;
     font-size: small;
@@ -111,40 +112,40 @@ footer {
     color: #0C304D;
 }
 
-.armrec img{
+.armrec img {
     filter: grayscale();
     transition: all .2s ease-in-out;
     margin-right: 1rem;
     opacity: 0.7;
 }
 
-.armrec:hover img{
+.armrec:hover img {
     filter: none;
     margin-right: 1.4rem;
     opacity: 1;
 }
 
-.antsol img{
+.antsol img {
     filter: grayscale();
     transition: all .2s ease-in-out;
     margin-right: 1rem;
     opacity: 0.7;
 }
 
-.antsol:hover img{
+.antsol:hover img {
     filter: none;
     margin-right: 1.4rem;
     opacity: 1;
 }
 
-.imggran img{
+.imggran img {
     filter: grayscale();
     transition: all .2s ease-in-out;
     margin-right: 1rem;
     opacity: 0.7;
 }
 
-.imggran:hover img{
+.imggran:hover img {
     filter: none;
     margin-right: 1.4rem;
     opacity: 1;
@@ -161,18 +162,20 @@ footer {
 }*/
 
 
-h1,h2{
+h1,
+h2 {
     font-family: 'Kanit';
     color: #0C304D;
 }
 
-#historia p{
+#historia p {
     font-family: 'Open Sans';
     color: #12827C;
 }
 
-#historia h2{
+#historia h2 {
     color: #0C304D;
+    font-family: 'Kanit';
 }
 
 #lowbutton {
@@ -188,5 +191,11 @@ h1,h2{
 }
 
 #conocenos h2 {
-color: white;
+    color: white;
+    font-family: 'Kanit';
 }
+
+/*.hover1:hover img{
+background-image: url('/public/images/productos-04.png') no-repeat;
+background-size: contain;
+}*\
