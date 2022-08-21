@@ -1,1 +1,173 @@
-<h1>prueba de página de producto seleccionado</h1>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px;">
+    <!--Inicio Nav-->
+    <a class="navbar-brand" href="#">
+        <img src="images/logo-01.svg" width="142" height="38" alt="" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Productos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" class="nav-link" href="/productos">Armazones recetados</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" class="nav-link" href="/productos">Anteojos de sol</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" class="nav-link" href="/productos">Lentes de contacto</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" class="nav-link" href="/productos">Cristales</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" class="nav-link" href="/productos">Accesorios</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-scoll href="/#destacados">Destacados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-scroll href="/#historia">Historia</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-scoll href="/#conocenos">Contacto</a>
+            </li>
+    </div>
+</nav>
+<!--Cierre Nav-->
+
+<!--producto-->
+<div class="container mt-5 mb-5 ">
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-6 border-end">
+                <div class="d-flex flex-column justify-content-center">
+                    <div id="custCarousel" class="carousel slide" data-ride="carousel" align="center">
+                        <!-- slides -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/productos-03.png" alt="Hills">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="images/productos-06.png" alt="Hills">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="images/productos-05.png" alt="Hills">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="images/productos-04.png" alt="Hills">
+                            </div>
+                        </div>
+
+                        <!-- Left right -->
+                        <a class="carousel-control-prev" href="#custCarousel" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#custCarousel" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+
+                        <!-- Thumbnails -->
+                       
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 right-side">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3>IIlana</h3> <span class="heart"><i class='bx bx-heart'></i></span>
+                    </div>
+                    <div class="mt-2 pr-3 content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua</p>
+                    </div>
+                    <h3>$430.99</h3>
+                    <div class="ratings d-flex flex-row align-items-center">
+                        <div class="d-flex flex-row"> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i
+                                class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i> </div>
+                        <span>441 reviews</span>
+                    </div>
+                    <div class="mt-5"> <span class="fw-bold">Color</span>
+                        <div class="colors">
+                            <ul id="marker">
+                                <li id="marker-1"></li>
+                                <li id="marker-2"></li>
+                                <li id="marker-3"></li>
+                                <li id="marker-4"></li>
+                                <li id="marker-5"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--cierre producto-->
+
+<!--Conocenos abre-->
+<div id="conocenos" class="row py-4 conocenos">
+
+    <div class="col-md-4 offset-md-2">
+        <h2>Visitanos</h2>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13140.250787322984!2d-58.4870284!3d-34.5772801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4d3194e734dc2526!2sOptica%20Urquiza!5e0!3m2!1sen!2sar!4v1654325579128!5m2!1sen!2sar"
+                style="border:0;" allowfullscreen=""></iframe>
+        </div>
+    </div>
+    <div class="col-md-4 mt-4 mt-sm-0">
+        <h2 style="font-family: ;">Contáctanos</h2>
+
+        <form action="/" method="post">
+            <div class="form-row">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" name="nombre">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Apellido">Apellido</label>
+                        <input type="text" class="form-control" id="Apellido" name="apellido">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="ejemplo@email.com" name="email">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="4" name="mensaje"></textarea>
+                </div>
+
+
+            </div>
+
+            <button type="submit" class="btn btn-info">Enviar</button>
+        </form>
+
+        {{#if message}}
+        <p>{{message}}</p>
+        {{/if}}
+
+    </div>
+</div>
+<!--conocenos cierra-->
+
+
+<footer>
+    <p class="text-center"> Diseñado por: Cobo Camila 2022</p>
+</footer>
