@@ -1,16 +1,16 @@
 var express = require('express');
 var router =express.Router();
-var novedadesModel = require('../../models/novedadesModel');
+var listaprodModel = require('../../models/listaprodModel');
 
 
 /**listar las novedades*/
 router.get('/', async function (req,res,next){
 
-    var novedades = await novedadesModel.getNovedades ();
-        res.render('admin/novedades',{
+    var listaprod = await listaprodModel.getListaprod ();
+        res.render('admin/listaprod',{
         layout:'admin/layout',
         persona: req.session.nombre,
-        novedades
+        listaprod
         
     });
 });
@@ -18,8 +18,8 @@ router.get('/', async function (req,res,next){
 /**Eliminar los productos */
 router.get('/eliminar/:id', async (req,res,next) => {
     var id = req.params.id;
-    await novedadesModel.deleteNovedadById(id);
-    res.redirect('/admin/novedades')
+    await listaprodModel.deleteProductoById(id);
+    res.redirect('/admin/listaprod')
 }); //cierra get de eliminar//
 
 

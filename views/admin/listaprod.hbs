@@ -21,7 +21,6 @@
         </div>
     </div>
     {{!--fin fila 2--}}
-   
     {{!--inicio fila 3--}}
 <div class="row">
     <div class="col">
@@ -29,19 +28,21 @@
             <thead>
                 <tr class="table-dark">
                     <th scope="col">#</th>
-                    <th scope="col">Título</th>
+                     <th scope="col">Modelo</th>
+                    <th scope="col">Marca</th>                   
                     <th scope="col" class="text-righ"> Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                {{#each novedades}}
+                {{#each listaprod}}
                 <tr>
                     
                     <th scope="row">{{id}}</th>
-                    <td>{{titulo}}</td>
+                    <td>{{modelo}}</td>
+                    <td>{{marca}}</td>                    
                     <td class="text-right">
                         <a href="" class="btn btn-secondary"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
+                        <a href="/admin/listaprod/eliminar/{{id}}" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
                 {{/each}}

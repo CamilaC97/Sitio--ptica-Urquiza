@@ -134,43 +134,19 @@
                 <h2>Destacados</h2>
                 <p>Los productos más buscados. Ingresa a la tienda para ver más.</p>
                 <div class="card-deck">
+                    {{#each listaprod}}
                     <div class="shadow card text-center zoom1">
                         <img src="images/productos-03.png" class="card-img-top" alt="...">
                         <div class="card-body card1">
-                            <p>RAYBAN</p>
-                            <h4 class="card-title">RB 3565</h4>
+                            <p>{{marca}}</p>
+                            <h4 class="card-title">{{modelo}}</h4>
                             <a type="button" class="btn btn-outline-info btn-sm" class="nav-link" href="/rb3565"> VER MÁS</a>
 
                         </div>
 
                     </div>
-                    <div class="shadow card text-center zoom2">
-                        <img src="images/productos-04.png" class="card-img-top" alt="...">
-                        <div class="card-body card2">
-                            <p>VOGUE</p>
-                            <h4 class="card-title">VO 5395S</h4>
-                            <a type="button" class="btn btn-outline-info btn-sm" class="nav-link" href="/rb3565">VER MÁS</a>
-                        </div>
-
-                    </div>
-                    <div class="shadow card text-center">
-                        <img src="images/productos-05.png" class="card-img-top" alt="...">
-                        <div class="card-body card3">
-                            <p>WELLINGTON POLO CLUB</p>
-                            <h4 class="card-title">MOD 2063</h4>
-                            <a type="button" class="btn btn-outline-info btn-sm" class="nav-link" href="/rb3565">VER MÁS</a>
-                        </div>
-
-                    </div>
-                    <div class="shadow card text-center">
-                        <img src="images/productos-06.png" class="card-img-top" alt="...">
-                        <div class="card-body card4">
-                            <p>RAYBAN</p>
-                            <h4 class="card-title">RB 2180</h4>
-                            <a type="button" class="btn btn-outline-info btn-sm" class="nav-link" href="/rb3565">VER MÁS</a>
-                        </div>
-
-                    </div>
+                    {{/each}}
+                    
                 </div>
             </div>
         </div>

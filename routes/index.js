@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var listaprodModel = require('../models/listaprodModel')
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function (req, res, next) {
+
+  var listaprod = await listaprodModel.getListaprod();
+  
+  res.render('index',{
+    listaprod
+  });
 });
 
 router.post('/', async (req, res, next) => {

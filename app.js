@@ -13,6 +13,7 @@ var productosRouter = require('./routes/productos');
 var rb3565Router = require('./routes/rb3565');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades');
+var listaRouter = require ('./routes/admin/listaprod');
 
 var app = express();
 
@@ -56,7 +57,7 @@ app.use('/productos', productosRouter);
 app.use('/rb3565', rb3565Router);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
-
+app.use('/admin/listaprod', secured, listaRouter);
 
 
 // catch 404 and forward to error handler
