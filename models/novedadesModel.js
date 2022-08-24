@@ -33,11 +33,24 @@ async function getNovedadById(id) {
 // modificar esos datos
 async function modificarNovedadById (obj, id) {
     try {
-        var query = "update novedades set ? where id=?";
-        var rows = await pool.query(query, obj [obj, id]);
+        var query = "update novedades set ? where id = ? ";
+        //aca tenias "(query, obj [obj, id])" tiene que ser solo  "query, [obj, id]" sin el obj antes de las "[]"
+        var rows = await pool.query(query, [obj, id]);
         return rows;
     } catch (error) {
         throw error;
+    }
+
+    async function modificarNovedadById(obj, id) {
+        console.log('check5');
+        try {
+            var query = "update news set ? where id=?";
+            var rows = await pool.query(query, [obj, id]);
+            return rows[0];
+        } catch (error) {
+            throw error;
+        }
+    
     }
 } //cierra modi> update
 

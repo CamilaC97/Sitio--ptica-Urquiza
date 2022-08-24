@@ -2,19 +2,25 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h4>Modificar novedad</h4>
+
             <form action="/admin/novedades/modificar" method="post">
                 <input type="hidden" value="{{novedad.id}}" name="id">
                 <div class="form-group">
                     <label for="">Titulo</label>
-                    <input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}">
+                    {{!-- <input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}"> --}}
+                    <textarea  name="titulo" class="form-control"
+                        style="width: 100%; height: 125px;">{{novedad.titulo}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Subtítulo</label>
-                    <input type="text" class="form-control" name="subtitulo" value="{{novedad.subtitulo}}">
+                    {{!-- <input type="text" class="form-control" name="subtitulo" value="{{novedad.subtitulo}}"> --}}
+                    <textarea  name="subtitulo" class="form-control"
+                        style="width: 100%; height: 125px;">{{novedad.subtitulo}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Cuerpo</label>
-                    <textarea name="subtitulo" class="form-control">{{novedad.cuerpo}}</textarea>
+                    {{!-- aqui el "name" estaba mal estaba como "subtitulo o titulo y no cuerpo como esta ahora" --}}
+                    <textarea name="cuerpo" class="form-control">{{novedad.cuerpo}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-info">Modificar</button>
             </form>
@@ -24,3 +30,5 @@
         </div>
     </div>
 </div>
+
+
