@@ -1,6 +1,9 @@
 var express = require('express');
 var router =express.Router();
 var listaprodModel = require('../../models/listaprodModel');
+var util = require ('util');
+var cloudinary = require('cloudinary').v2;
+const uploader = util.promisify(cloudinary.uploader.upload);
 
 
 /**listar las novedades*/
@@ -31,8 +34,19 @@ router.get ('/agregarprod', (req,res,next) =>{
 
 router.post ('/agregarprod', async (req,res,next) => {
     try {
+
+        var img_id = '';
+
+        if (req.files && Object.keys(req.files).lenght > 0){
+            imagen = req.files.imagen;
+            img_id = (await uploader (imagen.tempFilePath)).public_id;
+        }
+
         if (req.body.marca != "" && req.body.modelo != "") {
-            await listaprodModel.insertProducto(req.body);
+            await listaprodModel.insertProducto({
+                ...req.body, //spread, marca y modelo
+                img_id
+            });
             res.redirect ('/admin/listaprod')
         } else {
             res.render ('admin/agregarprod',{
@@ -79,7 +93,9 @@ router.post('/modificarprod', async (req,res,next) => {
             message: 'No se modifico el destacado'
         })
     }
-});
+}); //cierre modi
+
+
 
 
 module.exports = router;
