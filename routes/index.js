@@ -1,14 +1,34 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-var listaprodModel = require('../models/listaprodModel')
+var listaprodModel = require('../models/listaprodModel');
+var cloudinary = require('cloudinary').v2;
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
 
   var listaprod = await listaprodModel.getListaprod();
-  
-  res.render('index',{
+  listaprod = listaprod.splice(0, 4);
+  listaprod = listaprod.map(producto => {
+    if (producto.img_id) {
+      const imagen = cloudinary.url(producto.img_id, {
+        width: 460,
+        height:460,
+        crop: 'fill'
+      });
+      return {
+        ...producto,
+        imagen
+      }
+    } else {
+      return{
+        ...promocion,
+        imagen:'/images/noimage.jpg'
+      }
+    }
+  });
+
+  res.render('index', {
     listaprod
   });
 });
@@ -24,8 +44,8 @@ router.post('/', async (req, res, next) => {
   var obj = {
     to: 'cobo.camay@gmai.com',
     subject: 'Contacto desde la Web',
-    html: nombre + " " + apellido + " se contactó a traves de la sección de contacto y quiere más información a este correo:" 
-    + email 
+    html: nombre + " " + apellido + " se contactó a traves de la sección de contacto y quiere más información a este correo:"
+      + email
   } //cierra var obj
 
   var transporter = nodemailer.createTransport({
