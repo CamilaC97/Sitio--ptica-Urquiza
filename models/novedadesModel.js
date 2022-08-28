@@ -1,4 +1,4 @@
-var pool = require ('./bd');
+var pool = require('./bd');
 
 
 async function getNovedades() {
@@ -15,7 +15,7 @@ async function deleteNovedadById(id) {
 
 async function insertNovedad(obj) {
     try {
-        var query ="insert into novedades set ?";
+        var query = "insert into novedades set ?";
         var rows = await pool.query(query, [obj])
         return rows;
     } catch (error) {
@@ -27,11 +27,11 @@ async function insertNovedad(obj) {
 async function getNovedadById(id) {
     var query = "select * from novedades where id=?";
     var rows = await pool.query(query, [id]);
-    return rows [0];
+    return rows[0];
 }
 
 // modificar esos datos
-async function modificarNovedadById (obj, id) {
+async function modificarNovedadById(obj, id) {
     try {
         var query = "update novedades set ? where id = ? ";
         //aca tenias "(query, obj [obj, id])" tiene que ser solo  "query, [obj, id]" sin el obj antes de las "[]"
@@ -50,8 +50,15 @@ async function modificarNovedadById (obj, id) {
         } catch (error) {
             throw error;
         }
-    
+
     }
 } //cierra modi> update
 
-module.exports = { getNovedades, deleteNovedadById, insertNovedad, getNovedadById, modificarNovedadById }
+//buscar model
+async function buscarNovedades(busqueda) {
+    var query = "select * from novedades where titulo like ? OR subtitulo like ? OR cuerpo like ?"
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
+    return rows;
+}
+
+module.exports = { getNovedades, deleteNovedadById, insertNovedad, getNovedadById, modificarNovedadById, buscarNovedades }

@@ -54,4 +54,11 @@ async function modificarProductoById (obj, id) {
     }
 } //cierra modi> update
 
-module.exports = {getListaprod, deleteProductoById, insertProducto, getProductoById, modificarProductoById}
+//open buscar novedades
+async function buscarListaprod(busqueda) {
+    var query = "select * from listaprod where marca like ? OR modelo like ?";
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%']);
+    return rows;
+}
+
+module.exports = {getListaprod, deleteProductoById, insertProducto, getProductoById, modificarProductoById, buscarListaprod}

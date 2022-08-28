@@ -9,8 +9,10 @@ const destroy =util.promisify(cloudinary.uploader.destroy);
 
 /**listar las novedades*/
 router.get('/', async function (req, res, next) {
-
+    var novedades
+   
     var novedades = await novedadesModel.getNovedades();
+
 
     novedades = novedades.map(novedad => {
         if (novedad.img_id) {

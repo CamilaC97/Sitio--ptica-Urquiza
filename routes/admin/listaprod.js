@@ -10,7 +10,15 @@ const destroy = util.promisify(cloudinary.uploader.destroy);
 /**listar las novedades*/
 router.get('/', async function (req,res,next){
 
-    var listaprod = await listaprodModel.getListaprod ();
+    //var listaprod = await listaprodModel.getListaprod ();
+
+    var listaprod
+
+    if (req.query.q === undefined) {
+        listaprod = await listaprodModel.getListaprod();
+    } else {
+        listaprod = await listaprodModel.buscarListaprod(req.query.q);
+    }
 
     listaprod = listaprod.map(producto => {
         if (producto.img_id) {
@@ -33,7 +41,9 @@ router.get('/', async function (req,res,next){
         res.render('admin/listaprod',{
         layout:'admin/layout',
         persona: req.session.nombre,
-        listaprod
+        listaprod,
+        is_search: req.query.q !== undefined,
+        q: req.query.q
         
     });
 });
