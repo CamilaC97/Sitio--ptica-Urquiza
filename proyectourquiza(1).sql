@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 27, 2022 at 10:21 PM
+-- Generation Time: Aug 30, 2022 at 04:33 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `listaprod` (
   `modelo` varchar(250) NOT NULL,
   `img_id` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `listaprod`
@@ -44,7 +44,12 @@ INSERT INTO `listaprod` (`id`, `marca`, `modelo`, `img_id`) VALUES
 (14, 'WELLINGTON POLO CLUB', 'MOD 2063', 'ubvkyjsyh36vmxfauypl'),
 (13, 'VOGUE', 'VO 5395S', 'opinr0il5mznwc52m7ne'),
 (12, 'RAYBAN', 'RB 3565', 'vtgyh1meyfunemzt1krs'),
-(15, 'RAYBAN', 'RB 2180', 'izsoaifgnmcqipggwxrd');
+(15, 'RAYBAN', 'RB 2180', 'izsoaifgnmcqipggwxrd'),
+(16, 'OSSADA', 'OS-1276', 'ry9ntxkasanbk4inewqm'),
+(17, 'RAYBAN', 'RB 4171', 'gavtjd64xdmkwxvu1bdz'),
+(19, 'ANDREA', 'AK 1270', 't7fvzkuxz4czp16blmtj'),
+(20, 'VOGUE', 'VO 5285', 'urowqm6ikobmfggx4nsm'),
+(21, 'RAYBAN', 'RB 3602M', 'crc3qmom5rvhz0qn8chs');
 
 -- --------------------------------------------------------
 
