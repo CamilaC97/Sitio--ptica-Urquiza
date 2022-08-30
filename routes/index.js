@@ -22,7 +22,7 @@ router.get('/', async function (req, res, next) {
       }
     } else {
       return{
-        ...promocion,
+        ...producto,
         imagen:'/images/noimage.jpg'
       }
     }
@@ -42,7 +42,7 @@ router.post('/', async (req, res, next) => {
   //console.log(req.body)
 
   var obj = {
-    to: 'cobo.camay@gmai.com',
+    to: 'cobo.camay@gmail.com',
     subject: 'Contacto desde la Web',
     html: nombre + " " + apellido + " se contactó a traves de la sección de contacto y quiere más información a este correo:"
       + email
